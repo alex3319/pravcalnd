@@ -1,0 +1,14 @@
+.navigation {
+	display: flex;
+	margin-left: auto;
+	font-size: 16px;
+}
+
+.navigation__item {
+	color: inherit;
+	text-decoration: inherit;
+}
+
+.navigation__item + .navigation__item {
+	margin-left: 50px;
+}

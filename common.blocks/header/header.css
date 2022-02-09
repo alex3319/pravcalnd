@@ -1,0 +1,20 @@
+@import url(../../fonts/molodofontRegular/stylesheet.css);
+
+.header {
+	padding: 15px 0;
+	background: #EAB662;
+	text-transform: uppercase;
+}
+
+.header__inner {
+	display: flex;
+	align-items: center;
+}
+
+.header__title {
+	font-family: 'Molodo-font';
+	font-size: 32px;
+
+	color: inherit;
+	text-decoration: inherit;
+}
