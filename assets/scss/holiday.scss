@@ -63,7 +63,6 @@ body {
 }
 
 .content {
-	display: flex;
 	min-height: calc(100vh - 59.2px - 47px);
 
 	padding: 60px 0 30px 0;
@@ -71,69 +70,27 @@ body {
 	background-image: url(./assets/images/background.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-}
 
-.left {
-	.today {
-		padding: 10px;
-
-		font-family: 'Molodo-font', serif;
-
-		border-radius: 20px;
-		background: #609CDA;
-
-		&__top {
-			display: flex;
-			justify-content: space-between;
-
-			font-size: 18px;
-			text-transform: uppercase;
-		}
-
-		&__center {
-			margin-top: 5px;
-			text-align: center;
-		}
-
-		&__day {
-			font-size: 68px;
-		}
-
-		&__month {
-			font-size: 32px;
-		}
+	&-wrapper {
+		display: grid;
+		gap: 60px 30px;
 	}
 
-	.calendar {
-		width: 180px;
-		height: 140px;
-		
-		background: #fff;
-		border-radius: 10px;
-		box-shadow: 0px 3px 6px 0px #00000033;
-	}
+	.holiday-description-1 {
+		padding: 30px 25px;
 
-	>* + * {
-		margin-top: 60px;
-	}
-}
-
-.main {
-	margin: 0 50px;
-
-	&-description {
-		padding: 32px;
+		font-size: 14px;
 
 		color: #000;
 		background: #fff;
 
-		border-radius: 12px;
-		box-shadow: 0px 3px 6px 0px #00000033;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 15px;
 
 		h2 {
 			margin: 0 0 20px 0;
 
-			font-size: 14px;
+			font-size: 16px;
 			font-weight: 900;
 
 			text-align: center;
@@ -142,17 +99,82 @@ body {
 
 		p {
 			margin: 0;
-			font-size: 14px;
+		}
+
+		.bordered-box {
+			display: flex;
+			align-items: center;
+
+			padding: 10px;
+
+			border: 3px solid #EAB662;
+			border-radius: 15px;
+
+			img {
+				width: 32px;
+				height: 32px;
+			}
+
+			span {
+				font-weight: 900;
+			}
+
+			p {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+
+			>* + * {
+				margin-left: 10px;
+			}
+		}
+
+		&__posts {
+			margin-top: 20px;
+		}
+
+		&__end {
+			width: 65%;
+			margin-top: 20px;
+			font-weight: 900;
+		}
+
+		.bordered-box + .bordered-box {
+			margin-top: 10px;
 		}
 	}
 
-	&-articles {
-		display: flex;
-		justify-content: space-between;
-	}
+	.holiday-description-2 {
+		width: 250px;
+		font-size: 14px;
 
-	>* + * {
-		margin-top: 60px;
+		color: #000;
+		background: #fff;
+
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 15px;
+
+		img {
+			width: 100%;
+			height: 25%;
+
+			border-top-left-radius: inherit;
+			border-top-right-radius: inherit;
+		}
+
+		h2 {
+			font-size: 16px;
+			margin: 0 0 10px 0;
+			text-align: center;
+		}
+
+		p {
+			font-weight: 500;
+		}
+
+		h2, p {
+			padding: 0 10px;
+		}
 	}
 
 	.holiday {
@@ -247,83 +269,14 @@ body {
 		}
 	}
 
-	.article {
-		background: #fff;
-		border-radius: 12px;		
-		box-shadow: 0px 1.5px 3px 0px #00000033;
-
-		&-top {
-			display: flex;
-			flex-direction: column;
-
-			height: 100px;
-			padding: 5px;
-			
-			background-size: 100%;
-
-			border-top-left-radius: inherit;
-			border-top-right-radius: inherit;
-
-			&__item {
-				width: fit-content;
-				padding: 2px 6px;
-				
-				font-size: 12px;
-				font-weight: 500;
-
-				color: #fff;
-				background: #000;
-
-				&:first-child {
-					margin-top: auto;
-				}
-
-				& + .article-top__item {
-					margin-top: 2.5px;
-				}
-			}
-		}
-
-		&-center {
-			display: flex;
-			align-items: center;
-			margin: 10px;
-
-			img {
-				width: 32px;
-				height: 32px;
-				border-radius: 100%;
-			}
-
-			&__post {
-				margin-left: 10px;
-
-				font-size: 14px;
-				font-weight: 600;
-
-				color: #000;
-				text-decoration: inherit;
-			}
-		}
-
-		&-description {
-			display: block;
-			margin: 10px;
-
-			font-size: 12px;
-			font-weight: 500;
-
-			color: #000;
-			text-decoration: inherit;
-
-			p {
-				margin: 0;
-			}
-		}
+	.holiday {
+		max-width: 60%;
+		margin: 0 auto;
+		grid-column: span 3;
 	}
 
-	.article + .article {
-		margin-left: 30px;
+	.right {
+		margin-left: auto;
 	}
 }
 
