@@ -14,22 +14,23 @@ body {
 }
 
 .container {
-  display: inherit;
-  align-items: inherit;
-  justify-content: inherit;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 25px;
   width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .header {
-  display: flex;
-  align-items: center;
   padding: 0.65em 0;
   background: #EAB662;
   text-transform: uppercase;
 }
+.header__wrapper {
+  align-items: center;
+}
 .header__title {
+  grid-column: 1/5;
   font-family: "Molodo-font";
   font-size: 32px;
   color: inherit;
@@ -37,6 +38,7 @@ body {
 }
 .header-menu {
   display: flex;
+  grid-column: 5/13;
   margin: 0 0 0 auto;
   padding-left: 0;
   list-style: none;
@@ -49,8 +51,7 @@ body {
   margin-left: 50px;
 }
 
-.content {
-  display: flex;
+.main {
   min-height: calc(100vh - 59.2px - 47px);
   padding: 60px 0 30px 0;
   background-image: url(./assets/images/background.jpg);
@@ -58,103 +59,111 @@ body {
   background-repeat: no-repeat;
 }
 
-.left .today {
-  padding: 10px;
-  font-family: "Molodo-font", serif;
-  border-radius: 20px;
-  background: #609CDA;
-}
-.left .today__top {
-  display: flex;
-  justify-content: space-between;
-  font-size: 18px;
-  text-transform: uppercase;
-}
-.left .today__center {
-  margin-top: 5px;
-  text-align: center;
-}
-.left .today__day {
-  font-size: 68px;
-}
-.left .today__month {
-  font-size: 32px;
-}
-.left .calendar {
-  width: 180px;
-  height: 140px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 3px 6px 0px #00000033;
+.left {
+  grid-column: 1/3;
 }
 .left > * + * {
   margin-top: 60px;
 }
 
-.main {
-  margin: 0 50px;
+.today {
+  padding: 10px;
+  font-family: "Molodo-font", serif;
+  border-radius: 20px;
+  background: #609CDA;
 }
-.main-description {
+.today__top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.today__center {
+  margin-top: 5px;
+  text-align: center;
+}
+.today__day {
+  font-size: 68px;
+}
+.today__month {
+  font-size: 32px;
+}
+
+.calendar {
+  height: 140px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px 0px #00000033;
+}
+
+.content {
+  grid-column: 3/11;
+}
+.content-description {
   padding: 32px;
   color: #000;
   background: #fff;
   border-radius: 12px;
   box-shadow: 0px 3px 6px 0px #00000033;
 }
-.main-description h2 {
+.content-description h2 {
   margin: 0 0 20px 0;
   font-size: 14px;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
 }
-.main-description p {
+.content-description p {
   margin: 0;
   font-size: 14px;
 }
-.main-articles {
+.content-articles {
   display: flex;
   justify-content: space-between;
 }
-.main > * + * {
+.content-articles .article + .article {
+  margin-left: 20px;
+}
+.content > * + * {
   margin-top: 60px;
 }
-.main .holiday {
+
+.holiday {
   display: flex;
   border-radius: 12px;
   box-shadow: 0px 3px 6px 0px #00000033;
   color: #000;
   background: #fff;
 }
-.main .holiday__image {
+.holiday__image {
   display: block;
   width: 140px;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
 }
-.main .holiday__description {
+.holiday__description {
   display: flex;
   flex-direction: column;
   margin: 10px 20px 10px 10px;
 }
-.main .holiday__description h2 {
+.holiday__description h2 {
   margin: 0 0 5px 0;
   font-size: 16px;
 }
-.main .holiday__description p {
+.holiday__description p {
   margin: 0;
   font-size: 14px;
 }
-.main .holiday__description .holiday__button {
+.holiday__description .holiday__button {
   margin: 20px 0 0 auto;
 }
-.main .holiday__right {
+.holiday__right {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
   white-space: nowrap;
 }
-.main .holiday__right .holiday__duration {
+.holiday__right .holiday__duration {
   padding: 5px 10px;
   font-size: 14px;
   font-weight: 500;
@@ -163,16 +172,17 @@ body {
   text-align: center;
   border-radius: 0px 12px 0px 12px;
 }
-.main .holiday__right .holiday__next {
+.holiday__right .holiday__navigation {
   margin: auto 10px 0 0;
 }
-.main .holiday__right .holiday__next:first-child {
-  margin-top: auto;
+.holiday__right .holiday__navigation .holiday__button {
+  width: 100%;
+  text-align: center;
 }
-.main .holiday__right .holiday__next + .holiday__next {
+.holiday__right .holiday__navigation .holiday__button + .holiday__button {
   margin-top: 10px;
 }
-.main .holiday__button {
+.holiday__button {
   width: fit-content;
   padding: 0.2em 1em;
   font-size: 14px;
@@ -183,16 +193,17 @@ body {
   text-transform: uppercase;
   cursor: pointer;
 }
-.main .holiday__button a {
+.holiday__button a {
   color: inherit;
   text-decoration: inherit;
 }
-.main .article {
+
+.article {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0px 1.5px 3px 0px #00000033;
 }
-.main .article-top {
+.article-top {
   display: flex;
   flex-direction: column;
   height: 100px;
@@ -201,7 +212,7 @@ body {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
 }
-.main .article-top__item {
+.article-top__item {
   width: fit-content;
   padding: 2px 6px;
   font-size: 12px;
@@ -209,30 +220,30 @@ body {
   color: #fff;
   background: #000;
 }
-.main .article-top__item:first-child {
+.article-top__item:first-child {
   margin-top: auto;
 }
-.main .article-top__item + .article-top__item {
+.article-top__item + .article-top__item {
   margin-top: 2.5px;
 }
-.main .article-center {
+.article-center {
   display: flex;
   align-items: center;
   margin: 10px;
 }
-.main .article-center img {
+.article-center img {
   width: 32px;
   height: 32px;
   border-radius: 100%;
 }
-.main .article-center__post {
+.article-center__post {
   margin-left: 10px;
   font-size: 14px;
   font-weight: 600;
   color: #000;
   text-decoration: inherit;
 }
-.main .article-description {
+.article-description {
   display: block;
   margin: 10px;
   font-size: 12px;
@@ -240,33 +251,36 @@ body {
   color: #000;
   text-decoration: inherit;
 }
-.main .article-description p {
+.article-description p {
   margin: 0;
 }
-.main .article + .article {
-  margin-left: 30px;
+
+.right {
+  grid-column: 11/13;
+}
+.right > * + * {
+  margin-top: 60px;
 }
 
-.right .block-1 {
-  width: 130px;
+.block-1 {
   height: 130px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0px 3px 6px 0px #00000033;
 }
-.right .block-2 {
-  width: 130px;
+
+.block-2 {
   height: 275px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0px 3px 6px 0px #00000033;
-}
-.right > * + * {
-  margin-top: 60px;
 }
 
 .footer {
   padding: 1em 0;
   font-size: 14px;
   background: #EAB662;
+}
+.footer__copyright {
+  grid-column: 1/4;
 }

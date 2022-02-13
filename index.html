@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<header class="header">
-			<div class="container">
+			<div class="header__wrapper container">
 				<a class="header__title" href="/">Православный календарь</a>
 				<ul class="header-menu">
 					<li class="header-menu__item">
@@ -21,8 +21,8 @@
 				</ul>
 			</div>
 		</header>
-		<div class="content">
-			<div class="container">
+		<main class="main">
+			<div class="main__wrapper container">
 				<aside class="left">
 					<div class="today">
 						<div class="today__top">
@@ -36,8 +36,8 @@
 					</div>
 					<div class="calendar"></div>
 				</aside>
-				<main class="main">
-					<div class="main-description">
+				<section class="content">
+					<div class="content-description">
 						<h2>Православный календарь христианских праздников</h2>
 						<p>Православный (церковный) календарь содержит в себе все самые важные и великие православные праздники. Основные великие церковные даты отражают деяния Иисуса Христа и Девы Марии при их жизни. Вы можете воспользоваться онлайн календарем, чтобы узнать какой сегодня церковный праздник. Будьте в курсе событий и не забудьте поздравить своих родственников и близких друзей.</p>
 					</div>
@@ -52,11 +52,13 @@
 						</div>
 						<div class="holiday__right">
 							<div class="holiday__duration">1 и 28 октября</div>
-							<div class="holiday__button holiday__next">Следующий >></div>
-							<div class="holiday__button holiday__next">Следующий >></div>
+							<div class="holiday__navigation">
+								<div class="holiday__button holiday__next">Следующий >></div>
+								<div class="holiday__button holiday__previus"><< Предыдущий</div>
+							</div>
 						</div>
 					</div>
-					<div class="main-articles">
+					<div class="content-articles">
 						<article class="article">
 							<div class="article-top" style="background-image: url(./assets/images/1.jpg);">
 								<div class="article-top__item">Седмица 9-я по</div>
@@ -103,15 +105,15 @@
 							</a>
 						</article>
 					</div>
-				</main>
+				</section>
 				<aside class="right">
 					<div class="block-1"></div>
 					<div class="block-2"></div>
 				</aside>
 			</div>
-		</div>
+		</main>
 		<footer class="footer">
-			<div class="container">
+			<div class="footer__wrapper container">
 				<span class="footer__copyright">Copyright © Календарь. 2022</span>
 			</div>
 		</footer>
