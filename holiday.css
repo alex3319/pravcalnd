@@ -20,6 +20,23 @@ body {
   width: 1140px;
   margin: 0 auto;
 }
+@media screen and (min-width: 1920px) {
+  .container {
+    width: 1320px;
+  }
+}
+@media screen and (min-width: 2048px) {
+  .container {
+    width: 1600px;
+    column-gap: 50px;
+  }
+}
+@media screen and (min-width: 3840px) {
+  .container {
+    width: 2048px;
+    column-gap: 100px;
+  }
+}
 
 .header {
   padding: 0.65em 0;
@@ -70,7 +87,7 @@ body {
 }
 .holiday-description-1 h2 {
   margin: 0 0 20px 0;
-  font-size: 16px;
+  font-size: 1.2em;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
@@ -110,6 +127,11 @@ body {
 .holiday-description-1 .bordered-box + .bordered-box {
   margin-top: 10px;
 }
+@media screen and (min-width: 1920px) {
+  .holiday-description-1 {
+    font-size: 16px;
+  }
+}
 
 .holiday-description-2 {
   grid-column: 8/11;
@@ -126,7 +148,7 @@ body {
   border-top-right-radius: inherit;
 }
 .holiday-description-2 h2 {
-  font-size: 16px;
+  font-size: 1.2em;
   margin: 0 0 10px 0;
   text-align: center;
 }
@@ -135,6 +157,11 @@ body {
 }
 .holiday-description-2 h2, .holiday-description-2 p {
   padding: 0 10px;
+}
+@media screen and (min-width: 1920px) {
+  .holiday-description-2 {
+    font-size: 16px;
+  }
 }
 
 .right {
@@ -166,6 +193,7 @@ body {
   box-shadow: 0px 3px 6px 0px #00000033;
   color: #000;
   background: #fff;
+  font-size: 14px;
 }
 .holiday__image {
   display: block;
@@ -176,15 +204,16 @@ body {
 .holiday__description {
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin: 10px 20px 10px 10px;
 }
 .holiday__description h2 {
   margin: 0 0 5px 0;
-  font-size: 16px;
+  font-size: 1.2em;
 }
 .holiday__description p {
   margin: 0;
-  font-size: 14px;
+  font-size: 1em;
 }
 .holiday__description .holiday__button {
   margin: 20px 0 0 auto;
@@ -192,12 +221,13 @@ body {
 .holiday__right {
   display: flex;
   flex-direction: column;
+  margin-left: auto;
   margin-bottom: 10px;
   white-space: nowrap;
 }
 .holiday__right .holiday__duration {
   padding: 5px 10px;
-  font-size: 14px;
+  font-size: 1em;
   font-weight: 500;
   color: #fff;
   background: #EAB662;
@@ -217,7 +247,7 @@ body {
 .holiday__button {
   width: fit-content;
   padding: 0.2em 1em;
-  font-size: 14px;
+  font-size: 1em;
   font-weight: 500;
   color: #fff;
   background: #2F9CDD;
@@ -228,6 +258,11 @@ body {
 .holiday__button a {
   color: inherit;
   text-decoration: inherit;
+}
+@media screen and (min-width: 1920px) {
+  .holiday {
+    font-size: 16px;
+  }
 }
 
 .footer {

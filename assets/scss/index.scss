@@ -23,6 +23,20 @@ body {
 
 	width: 1140px;
 	margin: 0 auto;
+
+	@media screen and (min-width: 1920px) {
+		width: 1320px;
+	}
+
+	@media screen and (min-width: 2048px) {
+		width: 1600px;
+		column-gap: 50px;
+	}
+
+	@media screen and (min-width: 3840px) {
+		width: 2048px;
+		column-gap: 100px;
+	}
 }
 
 .header {
@@ -87,6 +101,7 @@ body {
 	padding: 10px;
 
 	font-family: 'Molodo-font', serif;
+	font-size: 16px;
 
 	border-radius: 20px;
 	background: #609CDA;
@@ -95,21 +110,25 @@ body {
 		display: flex;
 		justify-content: space-between;
 
-		font-size: 18px;
+		font-size: 1.2em;
 		text-transform: uppercase;
 	}
 
 	&__center {
-		margin-top: 5px;
+		margin-top: 0.5em;
 		text-align: center;
 	}
 
 	&__day {
-		font-size: 68px;
+		font-size: 4em;
 	}
 
 	&__month {
-		font-size: 32px;
+		font-size: 2em;
+	}
+
+	@media screen and (min-width: 1920px) {
+		font-size: 18px;
 	}
 }
 
@@ -127,6 +146,8 @@ body {
 	&-description {
 		padding: 32px;
 
+		font-size: 14px;
+
 		color: #000;
 		background: #fff;
 
@@ -136,7 +157,7 @@ body {
 		h2 {
 			margin: 0 0 20px 0;
 
-			font-size: 14px;
+			font-size: 1.2em;
 			font-weight: 900;
 
 			text-align: center;
@@ -145,7 +166,11 @@ body {
 
 		p {
 			margin: 0;
-			font-size: 14px;
+			font-size: 1em;
+		}
+
+		@media screen and (min-width: 1920px) {
+			font-size: 16px;
 		}
 	}
 
@@ -172,6 +197,8 @@ body {
 	color: #000;
 	background: #fff;
 
+	font-size: 14px;
+
 	&__image {
 		display: block;
 		width: 140px;
@@ -183,16 +210,18 @@ body {
 	&__description {
 		display: flex;
 		flex-direction: column;
+
+		width: 100%;
 		margin: 10px 20px 10px 10px;
 
 		h2 {
 			margin: 0 0 5px 0;
-			font-size: 16px;
+			font-size: 1.2em;
 		}
 
 		p {
 			margin: 0;
-			font-size: 14px;
+			font-size: 1em;
 		}
 
 		.holiday__button {
@@ -204,13 +233,14 @@ body {
 		display: flex;
 		flex-direction: column;
 
+		margin-left: auto;
 		margin-bottom: 10px;
 		white-space: nowrap;
 
 		.holiday__duration {
 			padding: 5px 10px;
 
-			font-size: 14px;
+			font-size: 1em;
 			font-weight: 500;
 
 			color: #fff;
@@ -238,7 +268,7 @@ body {
 		width: fit-content;
 		padding: .2em 1em;
 
-		font-size: 14px;
+		font-size: 1em;
 		font-weight: 500;
 
 		color: #fff;
@@ -254,18 +284,23 @@ body {
 			text-decoration: inherit;
 		}
 	}
+
+	@media screen and (min-width: 1920px) {
+		font-size: 16px;
+	}
 }
 
 .article {
+	font-size: 14px;
 	background: #fff;
-	border-radius: 12px;		
+	border-radius: 12px;
 	box-shadow: 0px 1.5px 3px 0px #00000033;
 
 	&-top {
 		display: flex;
 		flex-direction: column;
 
-		height: 100px;
+		height: 110px;
 		padding: 5px;
 		
 		background-size: 100%;
@@ -277,7 +312,7 @@ body {
 			width: fit-content;
 			padding: 2px 6px;
 			
-			font-size: 12px;
+			font-size: 1em;
 			font-weight: 500;
 
 			color: #fff;
@@ -307,7 +342,7 @@ body {
 		&__post {
 			margin-left: 10px;
 
-			font-size: 14px;
+			font-size: 1em;
 			font-weight: 600;
 
 			color: #000;
@@ -319,7 +354,7 @@ body {
 		display: block;
 		margin: 10px;
 
-		font-size: 12px;
+		font-size: .95em;
 		font-weight: 500;
 
 		color: #000;
@@ -328,6 +363,10 @@ body {
 		p {
 			margin: 0;
 		}
+	}
+
+	@media screen and (min-width: 1920px) {
+		font-size: 16px;
 	}
 }
 
