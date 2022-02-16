@@ -58,7 +58,7 @@ body {
 }
 .main__wrapper {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 0.835fr 3fr 0.835fr;
   grid-template-rows: repeat(3, auto);
   gap: 25px;
 }
@@ -178,7 +178,7 @@ body {
   animation-delay: 100ms;
 }
 .holiday__description .holiday__button {
-  margin: 20px 0 0 auto;
+  margin: auto 0 0 auto;
 }
 .holiday__right {
   display: flex;
@@ -316,7 +316,7 @@ body {
   }
 
   .main__wrapper {
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 0.75fr 4fr 0.75fr;
   }
 
   .today {
@@ -341,7 +341,7 @@ body {
   }
 
   .main__wrapper {
-    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-columns: 0.7fr 5fr 0.7fr;
   }
 }
 @media screen and (min-width: 3048px) {
@@ -350,6 +350,6 @@ body {
   }
 
   .main__wrapper {
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-columns: 0.8fr 6fr 0.8fr;
   }
 }

@@ -206,7 +206,7 @@ body {
   animation-delay: 100ms;
 }
 .holiday__description .holiday__button {
-  margin: 20px 0 0 auto;
+  margin: auto 0 0 auto;
 }
 .holiday__right {
   display: flex;
