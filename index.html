@@ -1,122 +1,112 @@
 <!DOCTYPE html>
 <html lang="ru">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="index.css">
-		<title>Православный календарь</title>
-	</head>
-	<body>
-		<header class="header">
-			<div class="header__wrapper container">
-				<a class="header__title" href="/">Православный календарь</a>
-				<ul class="header-menu">
-					<li class="header-menu__item">
-						<a href="/holidays">Все праздники</a>
-					</li>
-					<li class="header-menu__item">
-						<a href="/contacts">Контакты</a>
-					</li>
-				</ul>
-			</div>
-		</header>
-		<main class="main">
-			<div class="main__wrapper container">
-				<aside class="left">
-					<div class="today">
-						<div class="today__top">
-							<span>Сегодня</span>
-							<span class="today__day-name"></span>
-						</div>
-						<div class="today__center">
-							<div class="today__day"></div>
-							<div class="today__month"></div>
-						</div>
-					</div>
-					<div class="calendar"></div>
-				</aside>
-				<section class="content">
-					<div class="content-description">
-						<h2>Православный календарь христианских праздников</h2>
-						<p>Православный (церковный) календарь содержит в себе все самые важные и великие православные праздники. Основные великие церковные даты отражают деяния Иисуса Христа и Девы Марии при их жизни. Вы можете воспользоваться онлайн календарем, чтобы узнать какой сегодня церковный праздник. Будьте в курсе событий и не забудьте поздравить своих родственников и близких друзей.</p>
-					</div>
-					<div class="holiday">
-						<img class="holiday__image" src="assets/images/1.jpg" alt="">
-						<div class="holiday__description">
-							<h2>Покров Святой Богородицы</h2>
-							<p>В традиции русского православия праздник отмечается 1 (14) октября; в греческом православии празднуется 1 и 28 октября по новому стиль.</p>
-							<div class="holiday__button">
-								<a href="#">Подробнее</a>
-							</div>
-						</div>
-						<div class="holiday__right">
-							<div class="holiday__duration">1 и 28 октября</div>
-							<div class="holiday__navigation">
-								<div class="holiday__button holiday__next">Следующий >></div>
-								<div class="holiday__button holiday__previus"><< Предыдущий</div>
-							</div>
-						</div>
-					</div>
-					<div class="content-articles">
-						<article class="article">
-							<div class="article-top" style="background-image: url(./assets/images/1.jpg);">
-								<div class="article-top__item">Седмица 9-я по</div>
-								<div class="article-top__item">Пятидесятнице.</div>
-							</div>
-							<div class="article-center">
-								<img src="assets/images/3.png" alt="">
-								<a class="article-center__post" href="#">Поста нет.</a>
-							</div>
-							<a class="article-description" href="#">
-								<p>
-									В традиции русского православия праздник отмечается 1 (14) октября; в греческом православии празднуется 1 и 28 октября по новому стиль.
-								</p>
-							</a>
-						</article>
-						<article class="article">
-							<div class="article-top" style="background-image: url(./assets/images/1.jpg);">
-								<div class="article-top__item">Седмица 9-я по</div>
-								<div class="article-top__item">Пятидесятнице.</div>
-							</div>
-							<div class="article-center">
-								<img src="assets/images/3.png" alt="">
-								<a class="article-center__post" href="#">Поста нет.</a>
-							</div>
-							<a class="article-description" href="#">
-								<p>
-									В традиции русского православия праздник отмечается 1 (14) октября; в греческом православии празднуется 1 и 28 октября по новому стиль.
-								</p>
-							</a>
-						</article>
-						<article class="article">
-							<div class="article-top" style="background-image: url(./assets/images/1.jpg);">
-								<div class="article-top__item">Седмица 9-я по</div>
-								<div class="article-top__item">Пятидесятнице.</div>
-							</div>
-							<div class="article-center">
-								<img src="assets/images/3.png" alt="">
-								<a class="article-center__post" href="#">Поста нет.</a>
-							</div>
-							<a class="article-description" href="#">
-								<p>
-									В традиции русского православия праздник отмечается 1 (14) октября; в греческом православии празднуется 1 и 28 октября по новому стиль.
-								</p>
-							</a>
-						</article>
-					</div>
-				</section>
-				<aside class="right">
-					<div class="block-1"></div>
-					<div class="block-2"></div>
-				</aside>
-			</div>
-		</main>
-		<footer class="footer">
-			<div class="footer__wrapper container">
-				<span class="footer__copyright">Copyright © Календарь. 2022</span>
-			</div>
-		</footer>
-		<script src="main.js"></script>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Православный календарь</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__wrapper container">
+            <a class="header__title" href="/">Православный календарь</a>
+            <ul class="header-menu">
+                <li class="header-menu__item">
+                    <a href="/holidays">Все праздники</a>
+                </li>
+                <li class="header-menu__item">
+                    <a href="/contacts">Контакты</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main class="main">
+        <div class="main__wrapper container">
+            <div class="today">
+                <span class="today__title">Сегодня</span>
+                <span class="today__day-name"></span>
+                <div class="today__day"></div>
+                <div class="today__month"></div>
+            </div>
+            <div class="card calendar"></div>
+            <div class="description">
+                <h2>Православный календарь христианских праздников</h2>
+                <p>Православный (церковный) календарь содержит в себе все самые важные и великие православные праздники. Основные великие церковные даты отражают деяния Иисуса Христа и Девы Марии при их жизни. Вы можете воспользоваться онлайн календарем, чтобы узнать какой сегодня церковный праздник. Будьте в курсе событий и не забудьте поздравить своих родственников и близких друзей.</p>
+            </div>
+            <div class="holiday">
+                <img class="holiday__image animation_slide-in-left" src="assets/images/1.jpg" alt="">
+                <div class="holiday__description">
+                    <h2 class="animation_slide-in-left">Покров Святой Богородицы</h2>
+                    <p class="animation_slide-in-left">В традиции русского православия праздник отмечается 1 (14) октября; в греческом православии празднуется 1 и 28 октября по новому стиль.</p>
+                    <div class="holiday__button">
+                        <a href="#">Подробнее</a>
+                    </div>
+                </div>
+                <div class="holiday__right">
+                    <div class="holiday__duration">1 и 28 октября</div>
+                    <div class="holiday__navigation">
+                        <div class="holiday__button holiday__button_next">Следующий >></div>
+                        <div class="holiday__button holiday__button_previus">&lt;&lt; Предыдущий</div>
+                    </div>
+                </div>
+            </div>
+            <div class="articles">
+                <article class="article">
+                    <div class="article-top" style="background-image: url(./assets/images/1.jpg);">
+                        <div class="article-top__item">Седмица 9-я по</div>
+                        <div class="article-top__item">Пятидесятнице.</div>
+                    </div>
+                    <div class="article-center">
+                        <img src="assets/images/3.png" alt="">
+                        <a class="article-center__post" href="#">Поста нет.</a>
+                    </div>
+                    <a class="article-description" href="#">
+                        <p>
+                            В традиции русского православия праздник отмечается 1 (14) октября; в греческом православии празднуется 1 и 28 октября по новому стиль.
+                        </p>
+                    </a>
+                </article>
+                <article class="article">
+                    <div class="article-top" style="background-image: url(./assets/images/1.jpg);">
+                        <div class="article-top__item">Седмица 9-я по</div>
+                        <div class="article-top__item">Пятидесятнице.</div>
+                    </div>
+                    <div class="article-center">
+                        <img src="assets/images/3.png" alt="">
+                        <a class="article-center__post" href="#">Поста нет.</a>
+                    </div>
+                    <a class="article-description" href="#">
+                        <p>
+                            В традиции русского православия праздник отмечается 1 (14) октября; в греческом православии празднуется 1 и 28 октября по новому стиль.
+                        </p>
+                    </a>
+                </article>
+                <article class="article">
+                    <div class="article-top" style="background-image: url(./assets/images/1.jpg);">
+                        <div class="article-top__item">Седмица 9-я по</div>
+                        <div class="article-top__item">Пятидесятнице.</div>
+                    </div>
+                    <div class="article-center">
+                        <img src="assets/images/3.png" alt="">
+                        <a class="article-center__post" href="#">Поста нет.</a>
+                    </div>
+                    <a class="article-description" href="#">
+                        <p>
+                            В традиции русского православия праздник отмечается 1 (14) октября; в греческом православии празднуется 1 и 28 октября по новому стиль.
+                        </p>
+                    </a>
+                </article>
+            </div>
+            <div class="card block-1"></div>
+            <div class="card block-2"></div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrapper container">
+            <span class="footer__copyright">Copyright © Календарь. 2022</span>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
 </html>

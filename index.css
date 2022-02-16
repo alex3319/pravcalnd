@@ -1,6 +1,8 @@
 @import url(./assets/fonts/roboto/stylesheet.css);
 @import url(./assets/fonts/molodofontRegular/stylesheet.css);
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -14,28 +16,8 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  column-gap: 25px;
   width: 1140px;
   margin: 0 auto;
-}
-@media screen and (min-width: 1920px) {
-  .container {
-    width: 1320px;
-  }
-}
-@media screen and (min-width: 2048px) {
-  .container {
-    width: 1600px;
-    column-gap: 50px;
-  }
-}
-@media screen and (min-width: 3840px) {
-  .container {
-    width: 2048px;
-    column-gap: 100px;
-  }
 }
 
 .header {
@@ -44,10 +26,10 @@ body {
   text-transform: uppercase;
 }
 .header__wrapper {
+  display: flex;
   align-items: center;
 }
 .header__title {
-  grid-column: 1/5;
   font-family: "Molodo-font";
   font-size: 32px;
   color: inherit;
@@ -55,7 +37,6 @@ body {
 }
 .header-menu {
   display: flex;
-  grid-column: 5/13;
   margin: 0 0 0 auto;
   padding-left: 0;
   list-style: none;
@@ -75,29 +56,40 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-.left {
-  grid-column: 1/3;
-}
-.left > * + * {
-  margin-top: 60px;
+.main__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  gap: 25px;
 }
 
 .today {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  row-gap: 15px;
+  grid-column: 1;
+  height: fit-content;
   padding: 10px;
   font-family: "Molodo-font", serif;
   font-size: 16px;
   border-radius: 20px;
   background: #609CDA;
-}
-.today__top {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1.2em;
   text-transform: uppercase;
 }
-.today__center {
-  margin-top: 0.5em;
+.today__title, .today__day-name {
+  font-size: 1.2em;
+}
+.today__title {
+  grid-column: 1;
+  text-align: start;
+}
+.today__day-name {
+  grid-column: 2;
+  text-align: end;
+}
+.today__day, .today__month {
+  grid-column: span 2;
   text-align: center;
 }
 .today__day {
@@ -106,23 +98,21 @@ body {
 .today__month {
   font-size: 2em;
 }
-@media screen and (min-width: 1920px) {
-  .today {
-    font-size: 18px;
-  }
-}
 
-.calendar {
-  height: 140px;
+.card {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0px 3px 6px 0px #00000033;
 }
 
-.content {
-  grid-column: 3/11;
+.calendar {
+  grid-column: 1;
+  grid-row: 2;
 }
-.content-description {
+
+.description {
+  grid-column: 2;
+  grid-row: 1;
   padding: 32px;
   font-size: 14px;
   color: #000;
@@ -130,60 +120,62 @@ body {
   border-radius: 12px;
   box-shadow: 0px 3px 6px 0px #00000033;
 }
-.content-description h2 {
+.description h2 {
   margin: 0 0 20px 0;
   font-size: 1.2em;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
 }
-.content-description p {
+.description p {
   margin: 0;
   font-size: 1em;
 }
-@media screen and (min-width: 1920px) {
-  .content-description {
-    font-size: 16px;
-  }
-}
-.content-articles {
-  display: flex;
-  justify-content: space-between;
-}
-.content-articles .article + .article {
-  margin-left: 20px;
-}
-.content > * + * {
-  margin-top: 60px;
+
+.articles {
+  grid-column: 2;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
 }
 
 .holiday {
+  grid-column: 2;
+  grid-row: 2;
   display: flex;
   border-radius: 12px;
   box-shadow: 0px 3px 6px 0px #00000033;
   color: #000;
   background: #fff;
   font-size: 14px;
+  overflow: hidden;
 }
 .holiday__image {
   display: block;
   width: 140px;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
+  animation-duration: 1s;
 }
 .holiday__description {
   display: flex;
   flex-direction: column;
   width: 100%;
   margin: 10px 20px 10px 10px;
+  overflow: hidden;
 }
 .holiday__description h2 {
   margin: 0 0 5px 0;
   font-size: 1.2em;
+  animation-duration: 1.1s;
+  animation-delay: 50ms;
 }
 .holiday__description p {
   margin: 0;
   font-size: 1em;
+  animation-duration: 1.2s;
+  animation-delay: 100ms;
 }
 .holiday__description .holiday__button {
   margin: 20px 0 0 auto;
@@ -228,11 +220,6 @@ body {
 .holiday__button a {
   color: inherit;
   text-decoration: inherit;
-}
-@media screen and (min-width: 1920px) {
-  .holiday {
-    font-size: 16px;
-  }
 }
 
 .article {
@@ -292,31 +279,15 @@ body {
 .article-description p {
   margin: 0;
 }
-@media screen and (min-width: 1920px) {
-  .article {
-    font-size: 16px;
-  }
-}
-
-.right {
-  grid-column: 11/13;
-}
-.right > * + * {
-  margin-top: 60px;
-}
 
 .block-1 {
-  height: 130px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 3px 6px 0px #00000033;
+  grid-column: 3;
+  grid-row: 1;
 }
 
 .block-2 {
-  height: 275px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 3px 6px 0px #00000033;
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .footer {
@@ -324,6 +295,61 @@ body {
   font-size: 14px;
   background: #EAB662;
 }
-.footer__copyright {
-  grid-column: 1/4;
+
+.animation_slide-in-left {
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 1920px) {
+  .container {
+    width: 1600px;
+  }
+
+  .main__wrapper {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+
+  .today {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .holiday {
+    font-size: 16px;
+  }
+
+  .article {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 2048px) {
+  .container {
+    width: 1920px;
+  }
+
+  .main__wrapper {
+    grid-template-columns: 1fr 5fr 1fr;
+  }
+}
+@media screen and (min-width: 3048px) {
+  .container {
+    width: 2048px;
+  }
+
+  .main__wrapper {
+    grid-template-columns: 1fr 6fr 1fr;
+  }
 }
