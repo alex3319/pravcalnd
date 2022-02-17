@@ -34,34 +34,31 @@ document.querySelectorAll('.today__month').forEach(element => {
 });
 
 document.querySelectorAll('.holiday').forEach(holidayElement => {
-    const imageElement = holidayElement.querySelector(".holiday__image");
-    const titleElement = holidayElement.querySelector(".holiday__description h2");
-    const descriptionElement = holidayElement.querySelector(".holiday__description p");
+    const images = holidayElement.querySelectorAll(".holiday__image");
+    const descriptions = holidayElement.querySelectorAll(".holiday__description");
+
+    const elementHandler = (element, elementIndex, slideIndex) => {
+        console.log(element, elementIndex, slideIndex - 1);
+
+        if (elementIndex === slideIndex - 1) {
+            element.style.display = 'block';
+        } else {
+            element.style.display = 'none';
+        }
+    };
 
     holidayElement.querySelectorAll('.holiday__button').forEach(holidayButton => {
         holidayButton.addEventListener('click', event => {
-            if (event.currentTarget.classList.contains("holiday__button_next") ||
-                event.currentTarget.classList.contains("holiday__button_previus")
-            ) {
-                imageElement.classList.remove('animation_slide-in-left');
-                titleElement.classList.remove('animation_slide-in-left');
-                descriptionElement.classList.remove('animation_slide-in-left');
+            const currentSlide = parseInt(holidayElement.getAttribute('data-slide'));
 
-                void event.currentTarget.offsetWidth;
-
-                imageElement.classList.add('animation_slide-in-left');
-                titleElement.classList.add('animation_slide-in-left');
-                descriptionElement.classList.add('animation_slide-in-left');
-            }
-
-            if (event.currentTarget.classList.contains("holiday__button_next")) {
-                imageElement.setAttribute('src', 'assets/images/3.jpg');
-                titleElement.textContent = 'Рождество Христово';
-                descriptionElement.textContent = 'Один из важнейших христианских праздников и государственный праздник в более чем 100 странах мира. В православии Рождество Христово празднуется 7 января';
-            } else if (event.currentTarget.classList.contains("holiday__button_previus")) {
-                imageElement.setAttribute('src', 'assets/images/1.jpg');
-                titleElement.textContent = 'Покров Святой Богородицы';
-                descriptionElement.textContent = 'В традиции русского православия праздник отмечается 1 (14) октября; в греческом православии празднуется 1 и 28 октября по новому стиль.';
+            if (event.currentTarget.classList.contains("holiday__button_next") && currentSlide + 1 <= images.length) {
+                images.forEach((image, imageIndex) => elementHandler(image, imageIndex, currentSlide + 1));
+                descriptions.forEach((description, descriptionIndex) => elementHandler(description, descriptionIndex, currentSlide + 1));
+                holidayElement.setAttribute('data-slide', currentSlide + 1);
+            } else if (event.currentTarget.classList.contains("holiday__button_previus") && currentSlide - 1 >= 1) {
+                images.forEach((image, imageIndex) => elementHandler(image, imageIndex, currentSlide - 1));
+                descriptions.forEach((description, descriptionIndex) => elementHandler(description, descriptionIndex, currentSlide - 1));
+                holidayElement.setAttribute('data-slide', currentSlide - 1);
             }
         });
     });
