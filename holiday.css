@@ -60,7 +60,7 @@ body {
 }
 .main__wrapper {
   display: grid;
-  grid-template-columns: 50% 30% 20%;
+  grid-template-columns: calc(50% - 1em) calc(30% - 1em) 20%;
   grid-template-rows: repeat(3, auto);
   gap: 1em;
 }
@@ -174,37 +174,40 @@ body {
   background: #fff;
   overflow: hidden;
 }
-.holiday__image {
+.holiday .holiday__image {
   display: block;
   width: 100%;
   height: 100%;
   border-top-left-radius: inherit;
   border-bottom-left-radius: inherit;
+  animation-name: fadeIn;
   animation-duration: 1s;
 }
-.holiday__description {
+.holiday .holiday__description {
   display: flex;
   flex-direction: column;
   margin: 0.35em 0;
   overflow: hidden;
 }
-.holiday__description h2 {
+.holiday .holiday__description h2 {
   margin: 0 0 0.25em 0;
   font-size: 1.1em;
+  animation-name: slideInLeft;
   animation-duration: 1.1s;
   animation-delay: 50ms;
 }
-.holiday__description p {
+.holiday .holiday__description p {
   margin: 0;
   font-size: 1em;
+  animation-name: slideInLeft;
   animation-duration: 1.2s;
   animation-delay: 100ms;
 }
-.holiday__right {
+.holiday .holiday__right {
   display: flex;
   flex-direction: column;
 }
-.holiday__right .holiday__duration {
+.holiday .holiday__right .holiday__duration {
   width: fit-content;
   margin-left: auto;
   padding: 0.25em 1em;
@@ -214,15 +217,21 @@ body {
   text-align: center;
   border-radius: 0px 0.6em 0px 0.6em;
   white-space: nowrap;
+  overflow: hidden;
 }
-.holiday__right .holiday__navigation {
+.holiday .holiday__right .holiday__duration span {
+  display: block;
+  animation-name: slideInRight;
+  animation-duration: 1s;
+}
+.holiday .holiday__right .holiday__navigation {
   display: grid;
   justify-items: end;
   grid-template-columns: 1fr;
   gap: 0.25em;
   margin: auto 0 0.35em 0;
 }
-.holiday__button {
+.holiday .holiday__button {
   width: fit-content;
   padding: 0.2em 1em;
   font-weight: 500;
@@ -234,14 +243,17 @@ body {
   user-select: none;
   border-radius: 1em 0 0 1em;
 }
-.holiday__button_next, .holiday__button_previus {
+.holiday .holiday__button_next,
+.holiday .holiday__button_previus {
   padding: 0.3em 0.5em;
   transition: padding 250ms;
 }
-.holiday__button_next svg, .holiday__button_previus svg {
+.holiday .holiday__button_next svg,
+.holiday .holiday__button_previus svg {
   display: block;
 }
-.holiday__button_next:hover, .holiday__button_previus:hover {
+.holiday .holiday__button_next:hover,
+.holiday .holiday__button_previus:hover {
   padding: 0.3em 1em;
 }
 
@@ -255,14 +267,38 @@ body {
   height: inherit;
 }
 
-.animation_slide-in-left {
-  animation-name: slideInLeft;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @keyframes slideInLeft {
   0% {
     opacity: 0;
     transform: translateX(-25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(25%);
   }
   100% {
     opacity: 1;
@@ -280,20 +316,20 @@ body {
 }
 @media screen and (min-width: 1366px) {
   body {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .container {
-    width: 1024px;
+    width: 1280px;
   }
 }
 @media screen and (min-width: 1600px) {
   body {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .container {
-    width: 1366px;
+    width: 1440px;
   }
 }
 @media screen and (min-width: 2560px) {
@@ -302,15 +338,15 @@ body {
   }
 
   .container {
-    width: 1920px;
+    width: 2400px;
   }
 }
 @media screen and (min-width: 3840px) {
   body {
-    font-size: 48px;
+    font-size: 52px;
   }
 
   .container {
-    width: 3200px;
+    width: 3440px;
   }
 }
