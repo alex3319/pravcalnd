@@ -25,6 +25,32 @@ const months = [
     'Декабря'
 ];
 
+document.querySelectorAll(".header-hamburger").forEach(hamburger => {
+    const icons = hamburger.querySelectorAll('.header-hamburger__icon');
+
+    icons.forEach(hamburgerIcon => {
+        hamburgerIcon.addEventListener('click', () => {
+            if (hamburgerIcon.classList.contains('header-hamburger__icon_opened')) {
+                icons[0].style.display = 'none';
+                icons[1].style.display = 'block';
+
+                hamburger.querySelector('.header-hamburger__popup').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else if (hamburgerIcon.classList.contains('header-hamburger__icon_closed')) {
+                icons[0].style.display = 'flex';
+                icons[1].style.display = 'none';
+                hamburger.querySelector('.header-hamburger__popup').style.display = 'none';
+                document.body.style.removeProperty('overflow');
+            }
+        });
+    });
+});
+
 document.querySelectorAll('.today__day').forEach(element => {
     element.textContent = currentDate.getDate();
 });

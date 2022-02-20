@@ -36,6 +36,8 @@ body {
     }
 
     &__title {
+        z-index: 2;
+
         font-family: 'Molodo-font';
         font-size: 2em;
 
@@ -60,6 +62,95 @@ body {
 
             & + & {
                 margin-left: 50px;
+            }
+        }
+    }
+
+    &-hamburger {
+        display: none;
+        margin-left: auto;
+        cursor: pointer;
+
+        &__icon {
+            width: 1.75em;
+            height: 1.5em;
+
+            &_opened {
+                display: flex;
+                flex-direction: column;
+
+                div {
+                    width: 100%;
+                    height: 3px;
+
+                    background: #fff;
+                    border-radius: 3px;
+                }
+
+                div + div {
+                    margin-top: auto;
+                }
+            }
+
+            &_closed {
+                position: relative;
+                z-index: 2;
+
+                div {
+                    position: absolute;
+                    top: calc(50% - 3px / 2);
+
+                    width: 100%;
+                    height: 3px;
+
+                    background: #fff;
+                    border-radius: 3px;
+                }
+
+                div:nth-child(1) {
+                    transform: rotateZ(45deg);
+                }
+
+                div:nth-child(2) {
+                    transform: rotateZ(-45deg);
+                }
+            }
+        }
+
+        &__popup {
+            position: absolute;
+            z-index: 1;
+
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+            height: 100vw;
+
+            background: rgba(#EAB662, .75);
+            cursor: initial;
+        }
+
+        &-menu {
+            width: fit-content;
+
+            margin: 6em auto 0 auto;
+            padding: 0;
+
+            list-style: none;
+
+            &__item {
+                font-size: 1.5em;
+                text-align: center;
+
+                a {
+                    color: inherit;
+                    text-decoration: inherit;
+                }
+
+                & + & {
+                    margin-top: .75em;
+                }
             }
         }
     }
@@ -331,6 +422,150 @@ body {
     }
 }
 
+.holiday-touch {
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 1em;
+
+    border-radius: .6em;
+    box-shadow: 0px .2em .25em 0px #00000033;
+
+    color: #000;
+    background: #fff;
+
+    .holiday-image-wrapper {
+        position: relative;
+        height: 15em;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+    }
+
+    .holiday__image {
+        width: 100%;
+        height: 100%;
+
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+
+        animation: fadeIn 1s;
+    }
+
+    .holiday__duration {
+        position: absolute;
+        width: fit-content;
+
+        top: 0;
+        right: 0;
+
+        padding: .25em 1em;
+
+        font-weight: 500;
+
+        color: #fff;
+        background: #EAB662;
+
+        border-top-right-radius: .6em;
+        border-bottom-left-radius: .6em;
+
+        overflow: hidden;
+
+        span {
+            display: block;
+            animation: slideInRight 1s;
+        }
+    }
+
+    .holiday__description {
+        h2 {
+            margin: 0 0 .5em 0;
+            font-size: 1.2em;
+            text-align: center;
+
+            animation-name: slideInUp;
+            animation-duration: 750ms;
+            animation-delay: 50ms;
+        }
+
+        p {
+            margin: 0;
+            padding: 0 2em;
+
+            animation-name: slideInUp;
+            animation-duration: 750ms;
+            animation-delay: 100ms;
+        }
+    }
+
+    .holiday__navigation {
+        display: flex;
+        margin: 0 auto 1em auto;
+
+        .holiday__button {
+            display: flex;
+            align-items: center;
+
+            padding: .5em 1em;
+
+            color: #fff;
+            background: #2F9CDD;
+
+            user-select: none;
+            cursor: pointer;
+
+            svg {
+                display: block;
+            }
+        }
+
+        a.holiday__button {
+            font-weight: 500;
+            text-transform: uppercase;
+            text-decoration: inherit;
+        }
+
+        .holiday__button_next {
+            border-top-right-radius: 1em;
+            border-bottom-right-radius: 1em;
+        }
+
+        .holiday__button_previus {
+            border-top-left-radius: 1em;
+            border-bottom-left-radius: 1em;
+        }
+
+        .holiday__button + .holiday__button {
+            margin-left: .25em;
+        }
+    }
+}
+
+.block-1 {
+    width: 100%;
+    height: 100%;
+
+    &_mobile {
+        display: none;
+        height: 17.5em;
+
+        grid-column: 1;
+        grid-row: 3;
+    }
+}
+
+.block-2 {
+    width: 100%;
+    height: 100%;
+
+    &_mobile {
+        display: none;
+        height: 17.5em;
+
+        grid-column: 1;
+        grid-row: 5;
+    }
+}
+
 .footer {
     height: 2.5em;
     background: #EAB662;
@@ -385,6 +620,96 @@ body {
     100% {
         opacity: 1.0;
         transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 320px;
+    }
+
+    .header {
+        &__title {
+            margin-left: auto;
+            font-size: 1.6em;
+        }
+
+        &-menu {
+            display: none;
+        }
+
+        &-hamburger {
+            display: block;
+        }
+    }
+
+    .main {
+        padding: 3em 0;
+
+        &__wrapper {
+            grid-template-columns: 1fr;
+            grid-template-rows: initial;
+        }
+    }
+
+    .right {
+        display: none;
+    }
+
+    .holiday-description-2 {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .holiday-description-1 {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .block-1 {
+        display: none;
+
+        &_mobile {
+            display: block;
+        }
+    }
+
+    .holiday {
+        display: none;
+    }
+
+    .holiday-touch {
+        display: grid;
+        grid-column: 1;
+        grid-row: 4;
+    }
+
+    .block-2 {
+        display: none;
+
+        &_mobile {
+            display: block;
+        }
+    }
+
+    .footer__copyright {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .today {
+        display: none;
+    }
+
+    .calendar {
+        display: none;
     }
 }
 

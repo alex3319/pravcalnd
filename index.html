@@ -19,6 +19,27 @@
                     <a href="/contacts">Контакты</a>
                 </li>
             </ul>
+            <div class="header-hamburger">
+                <div class="header-hamburger__icon header-hamburger__icon_opened">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="header-hamburger__icon header-hamburger__icon_closed" style="display: none;">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="header-hamburger__popup" style="display: none;">
+                    <ul class="header-hamburger-menu">
+                        <li class="header-hamburger-menu__item">
+                            <a href="/holidays">Все праздники</a>
+                        </li>
+                        <li class="header-hamburger-menu__item">
+                            <a href="/contacts">Контакты</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
     <main class="main">
@@ -29,49 +50,46 @@
                 <div class="today__day"></div>
                 <div class="today__month"></div>
             </div>
-            <div class="left-touch">
-                <div class="today-touch">Сегодня</div>
-                <div class="holidays-touch">
-                    <h2 class="holidays-touch__title">Ближайшие праздники</h2>
-                    <div class="holidays-touch__items">
-                        <div class="holidays-touch__item">
-                            <span>1</span>
-                            <span>ПН, Февраль</span>
-                            <span>Праздник</span>
-                        </div>
-                        <div class="holidays-touch__item">
-                            <span>2</span>
-                            <span>ВТ, Февраль</span>
-                            <span>Праздник</span>
-                        </div>
-                        <div class="holidays-touch__item">
-                            <span>3</span>
-                            <span>СР, Февраль</span>
-                            <span>Праздник</span>
-                        </div>
-                        <div class="holidays-touch__item">
-                            <span>4</span>
-                            <span>ЧТ, Февраль</span>
-                            <span>Праздник</span>
-                        </div>
-                        <div class="holidays-touch__item">
-                            <span>5</span>
-                            <span>ПТ, Февраль</span>
-                            <span>Праздник</span>
-                        </div>
-                        <div class="holidays-touch__item">
-                            <span>6</span>
-                            <span>СБ, Февраль</span>
-                            <span>Праздник</span>
-                        </div>
-                        <div class="holidays-touch__item">
-                            <span>7</span>
-                            <span>ВС, Февраль</span>
-                            <span>Праздник</span>
-                        </div>
+            <div class="today-touch">Сегодня</div>
+            <div class="holidays-touch">
+                <h2 class="holidays-touch__title">Ближайшие праздники</h2>
+                <div class="holidays-touch__items">
+                    <div class="holidays-touch__item">
+                        <span>1</span>
+                        <span>ПН, Февраль</span>
+                        <span>Праздник</span>
+                    </div>
+                    <div class="holidays-touch__item">
+                        <span>2</span>
+                        <span>ВТ, Февраль</span>
+                        <span>Праздник</span>
+                    </div>
+                    <div class="holidays-touch__item">
+                        <span>3</span>
+                        <span>СР, Февраль</span>
+                        <span>Праздник</span>
+                    </div>
+                    <div class="holidays-touch__item">
+                        <span>4</span>
+                        <span>ЧТ, Февраль</span>
+                        <span>Праздник</span>
+                    </div>
+                    <div class="holidays-touch__item">
+                        <span>5</span>
+                        <span>ПТ, Февраль</span>
+                        <span>Праздник</span>
+                    </div>
+                    <div class="holidays-touch__item">
+                        <span>6</span>
+                        <span>СБ, Февраль</span>
+                        <span>Праздник</span>
+                    </div>
+                    <div class="holidays-touch__item">
+                        <span>7</span>
+                        <span>ВС, Февраль</span>
+                        <span>Праздник</span>
                     </div>
                 </div>
-                <div class="card block-1"></div>
             </div>
             <div class="card calendar">
                 <img src="assets/images/calendar.png" alt="" style="padding: 1em; width: 100%; height: 100%;">
@@ -227,6 +245,8 @@
             </div>
             <div class="card block-1"></div>
             <div class="card block-2"></div>
+            <div class="card block-1 block-1_mobile"></div>
+            <div class="card block-2 block-2_mobile"></div>
         </div>
     </main>
     <footer class="footer">

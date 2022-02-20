@@ -36,6 +36,8 @@ body {
     }
 
     &__title {
+        z-index: 2;
+
         font-family: 'Molodo-font';
         font-size: 2em;
 
@@ -60,6 +62,95 @@ body {
 
             & + & {
                 margin-left: 50px;
+            }
+        }
+    }
+
+    &-hamburger {
+        display: none;
+        margin-left: auto;
+        cursor: pointer;
+
+        &__icon {
+            width: 1.75em;
+            height: 1.5em;
+
+            &_opened {
+                display: flex;
+                flex-direction: column;
+
+                div {
+                    width: 100%;
+                    height: 3px;
+
+                    background: #fff;
+                    border-radius: 3px;
+                }
+
+                div + div {
+                    margin-top: auto;
+                }
+            }
+
+            &_closed {
+                position: relative;
+                z-index: 2;
+
+                div {
+                    position: absolute;
+                    top: calc(50% - 3px / 2);
+
+                    width: 100%;
+                    height: 3px;
+
+                    background: #fff;
+                    border-radius: 3px;
+                }
+
+                div:nth-child(1) {
+                    transform: rotateZ(45deg);
+                }
+
+                div:nth-child(2) {
+                    transform: rotateZ(-45deg);
+                }
+            }
+        }
+
+        &__popup {
+            position: absolute;
+            z-index: 1;
+
+            top: 0;
+            left: 0;
+
+            width: 100vw;
+            height: 100vw;
+
+            background: rgba(#EAB662, .75);
+            cursor: initial;
+        }
+
+        &-menu {
+            width: fit-content;
+
+            margin: 6em auto 0 auto;
+            padding: 0;
+
+            list-style: none;
+
+            &__item {
+                font-size: 1.5em;
+                text-align: center;
+
+                a {
+                    color: inherit;
+                    text-decoration: inherit;
+                }
+
+                & + & {
+                    margin-top: .75em;
+                }
             }
         }
     }
@@ -131,6 +222,8 @@ body {
 }
 
 .today-touch {
+    display: none;
+
     margin: 0 auto;
     padding: 1em;
 
@@ -146,6 +239,9 @@ body {
 }
 
 .holidays-touch {
+    display: none;
+
+    height: fit-content;
     padding: 1em;
 
     font-family: 'Molodo-font', serif;
@@ -577,6 +673,14 @@ body {
 
     width: 100%;
     height: 100%;
+
+    &_mobile {
+        display: none;
+        height: 17.5em;
+
+        grid-column: 1;
+        grid-row: 6;
+    }
 }
 
 .block-2 {
@@ -585,6 +689,14 @@ body {
 
     width: 100%;
     height: 100%;
+
+    &_mobile {
+        display: none;
+        height: 17.5em;
+
+        grid-column: 1;
+        grid-row: 8;
+    }
 }
 
 .footer {
@@ -667,11 +779,16 @@ body {
 
     .header {
         &__title {
+            margin-left: auto;
             font-size: 1.6em;
         }
 
         &-menu {
             display: none;
+        }
+
+        &-hamburger {
+            display: block;
         }
     }
 
@@ -681,28 +798,24 @@ body {
         &__wrapper {
             grid-template-columns: 1fr;
             grid-template-rows: initial;
-
-            > .block-1 {
-                display: none;
-            }
-        }
-    }
-
-    .left-touch {
-        display: grid;
-
-        .block-1 {
-            grid-column: initial;
-            grid-row: initial;
-            height: 17.5em;
         }
     }
 
     .today-touch {
+        display: block;
+
+        grid-column: 1;
+        grid-row: 1;
+
         font-size: 1.5em;
     }
 
     .holidays-touch {
+        display: block;
+
+        grid-column: 1;
+        grid-row: 2;
+
         h2 {
             font-size: 1.25em;
         }
@@ -712,9 +825,17 @@ body {
         }
     }
 
+    .block-1 {
+        display: none;
+
+        &_mobile {
+            display: block;
+        }
+    }
+
     .description {
         grid-column: 1;
-        grid-row: 2;
+        grid-row: 4;
         font-size: 1.1em;
 
         padding: 2em 1em;
@@ -727,23 +848,22 @@ body {
     .holiday-touch {
         display: grid;
         grid-column: 1;
-        grid-row: 3;
+        grid-row: 5;
     }
 
     .articles {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
 
         grid-column: 1;
-        grid-row: 4;
-
-        .article:nth-child(+3) {
-            display: none;
-        }
+        grid-row: 7;
     }
 
     .block-2 {
-        grid-column: 1;
-        grid-row: 4;
+        display: none;
+
+        &_mobile {
+            display: block;
+        }
     }
 
     .footer__copyright {
@@ -763,47 +883,47 @@ body {
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1279px) {
-    body {
-        font-size: 14px;
-    }
+// @media screen and (min-width: 768px) and (max-width: 1279px) {
+//     body {
+//         font-size: 14px;
+//     }
 
-    .container {
-        width: 640px;
-    }
+//     .container {
+//         width: 640px;
+//     }
 
-    .main__wrapper {
-        grid-template-columns: 45% 55%;
-        grid-template-rows: repeat(6, auto);
-    }
+//     .main__wrapper {
+//         grid-template-columns: 45% 55%;
+//         grid-template-rows: repeat(6, auto);
+//     }
 
-    .left-touch {
-        display: grid;
+//     .left-touch {
+//         display: grid;
 
-        .block-1 {
-            grid-column: initial;
-            grid-row: initial;
-            height: 17.5em;
-        }
-    }
+//         .block-1 {
+//             grid-column: initial;
+//             grid-row: initial;
+//             height: 17.5em;
+//         }
+//     }
 
-    .today {
-        display: none;
-    }
+//     .today {
+//         display: none;
+//     }
 
-    .calendar {
-        display: none;
-    }
+//     .calendar {
+//         display: none;
+//     }
 
-    .description {
-        height: fit-content;
-    }
+//     .description {
+//         height: fit-content;
+//     }
 
-    .holiday {
-        grid-column: 2;
-        grid-row: 2;
-    }
-}
+//     .holiday {
+//         grid-column: 2;
+//         grid-row: 2;
+//     }
+// }
 
 @media screen and (min-width: 1280px) {
     body {
