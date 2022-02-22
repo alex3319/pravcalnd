@@ -20,16 +20,14 @@
                 </li>
             </ul>
             <div class="header-hamburger">
-                <div class="header-hamburger__icon header-hamburger__icon_opened">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="header-hamburger__icon header-hamburger__icon_closed" style="display: none;">
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="header-hamburger__popup" style="display: none;">
+                <button class="header-hamburger__icon" onclick="this.classList.toggle('header-hamburger__icon_opened');">
+                    <svg width="100%" height="100%" viewBox="0 0 100 100">
+                        <path class="line line-1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                        <path class="line line-2" d="M 20,50 H 80" />
+                        <path class="line line-3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                    </svg>
+                </button>
+                <div class="header-hamburger__popup">
                     <ul class="header-hamburger-menu">
                         <li class="header-hamburger-menu__item">
                             <a href="/holidays">Все праздники</a>
@@ -38,6 +36,13 @@
                             <a href="/contacts">Контакты</a>
                         </li>
                     </ul>
+                    <div class="header-hamburger-social">
+                        <a href="https:/vk.com/id0">
+                            <svg width="2em" height="2em" viewBox="0 0 448 448" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M31.49 31.49C0 62.982 0 113.672 0 215.04V232.96C0 334.329 0 385.019 31.49 416.509C62.982 448 113.672 448 215.04 448H232.96C334.329 448 385.019 448 416.509 416.509C448 385.019 448 334.329 448 232.96V215.04C448 113.671 448 62.981 416.509 31.49C385.019 1.90735e-06 334.329 0 232.96 0H215.04C113.671 0 62.981 1.90735e-06 31.49 31.49ZM75.6 136.268H126.747C128.427 221.761 166.133 257.974 196 265.441V136.267H244.16V210C273.653 206.827 304.64 173.227 315.093 136.267H363.253C359.313 155.435 351.46 173.584 340.187 189.579C328.913 205.575 314.461 219.072 297.733 229.227C316.41 238.499 332.907 251.63 346.132 267.751C359.357 283.873 369.01 302.618 374.453 322.747H321.44C316.555 305.262 306.614 289.61 292.866 277.754C279.117 265.898 262.173 258.368 244.16 256.107V322.747H238.373C136.267 322.747 78.027 252.747 75.6 136.267V136.268Z" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -247,6 +252,10 @@
             <div class="card block-2"></div>
             <div class="card block-1 block-1_mobile"></div>
             <div class="card block-2 block-2_mobile"></div>
+            <div class="blocks-tablet">
+                <div class="card block-1 block-1_tablet"></div>
+                <div class="card block-2 block-2_tablet"></div>
+            </div>
         </div>
     </main>
     <footer class="footer">

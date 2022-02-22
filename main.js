@@ -26,28 +26,29 @@ const months = [
 ];
 
 document.querySelectorAll(".header-hamburger").forEach(hamburger => {
-    const icons = hamburger.querySelectorAll('.header-hamburger__icon');
+    hamburger.querySelector('.header-hamburger__icon').addEventListener('click', event => {
+        if (event.currentTarget.classList.contains('header-hamburger__icon_opened')) {
+            hamburger.querySelector('.header-hamburger__popup').style.height = '100vh';
+            document.body.style.overflow = 'hidden';
 
-    icons.forEach(hamburgerIcon => {
-        hamburgerIcon.addEventListener('click', () => {
-            if (hamburgerIcon.classList.contains('header-hamburger__icon_opened')) {
-                icons[0].style.display = 'none';
-                icons[1].style.display = 'block';
+            setTimeout(() => {
+                hamburger.querySelector('.header-hamburger__popup .header-hamburger-menu').style.opacity = '1';
+            }, 750);
 
-                hamburger.querySelector('.header-hamburger__popup').style.display = 'block';
-                document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                hamburger.querySelector('.header-hamburger__popup .header-hamburger-social').style.opacity = '1';
+            }, 1000);
 
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            } else if (hamburgerIcon.classList.contains('header-hamburger__icon_closed')) {
-                icons[0].style.display = 'flex';
-                icons[1].style.display = 'none';
-                hamburger.querySelector('.header-hamburger__popup').style.display = 'none';
-                document.body.style.removeProperty('overflow');
-            }
-        });
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            hamburger.querySelector('.header-hamburger__popup').style.removeProperty('height');
+            hamburger.querySelector('.header-hamburger__popup .header-hamburger-menu').style.removeProperty('opacity');
+            hamburger.querySelector('.header-hamburger__popup .header-hamburger-social').style.removeProperty('opacity');
+            document.body.style.removeProperty('overflow');
+        }
     });
 });
 
