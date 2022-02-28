@@ -229,7 +229,11 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-.holidays-touch__item span:nth-child(1) {
+.holidays-touch__item .item-date {
+  display: flex;
+  align-items: center;
+}
+.holidays-touch__item .item-date__day {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -238,14 +242,22 @@ body {
   border-radius: 0.2em;
   color: #fff;
   background: #EAB662;
+  margin-right: 0.25em;
 }
-.holidays-touch__item span:nth-child(2) {
+.holidays-touch__item .item-date__day-name {
+  color: #609CDA;
+  font-size: 0.8em;
+}
+.holidays-touch__item .item-date__month {
+  font-size: 0.9em;
+}
+.holidays-touch__item .item-date__day-name, .holidays-touch__item .item-date__month {
+  line-height: 1;
+}
+.holidays-touch__item .item-content {
+  min-width: 60%;
   margin-left: auto;
-}
-.holidays-touch__item div:nth-child(3) {
-  flex-basis: 100%;
-  text-align: center;
-  white-space: pre-wrap;
+  font-size: 0.9em;
 }
 .holidays-touch__item::after {
   display: block;
