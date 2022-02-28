@@ -222,12 +222,12 @@ body {
 .holidays-touch__items {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1em;
 }
 .holidays-touch__item {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  padding: 0.5em 0;
+  border-bottom: 2px solid #609CDA;
 }
 .holidays-touch__item .item-date {
   display: flex;
@@ -255,15 +255,14 @@ body {
   line-height: 1;
 }
 .holidays-touch__item .item-content {
-  min-width: 60%;
+  max-width: 60%;
   margin-left: auto;
   font-size: 0.9em;
+  text-align: right;
 }
 .holidays-touch__item::after {
   display: block;
   content: "";
-  flex-basis: 100%;
-  margin-top: 0.3em;
   border-bottom: 3px solid #609CDA;
 }
 
@@ -744,6 +743,7 @@ body {
     display: grid;
     grid-column: 1;
     grid-row: 1;
+    font-size: 1.25em;
   }
 
   .holidays-touch {
@@ -751,7 +751,7 @@ body {
     grid-column: 1;
     grid-row: 2;
     height: fit-content;
-    font-size: 1.1em;
+    font-size: 1.25em;
   }
   .holidays-touch__title {
     font-size: 1.35em;
